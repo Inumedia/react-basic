@@ -14,14 +14,6 @@ class Paginator extends Component {
 
     return (
       <div className="container">
-        <FontAwesome
-          name="caret-left"
-        />
-        {_.range(0, range).map(val => (
-          <div className="box">
-            {val}
-          </div>
-        ))}
       </div>
     );
   }
@@ -29,9 +21,16 @@ class Paginator extends Component {
 
 
 class App extends Component {
+  state = {
+    selectedPage: 1,
+  };
+
   render() {
     return (
-      <Paginator range={500} />
+      <div>
+        <div>{this.state.selectedPage}</div>
+        <Paginator />
+      </div>
     );
   }
 }
